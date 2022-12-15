@@ -1,0 +1,1985 @@
+/*
+ Description:  CDB Features Map  
+ Author:       Glen Johnson gjohnson@vatcinc.com
+*/
+ 
+MAP
+NAME "cdb-demo"
+STATUS ON
+SIZE 600 400
+SYMBOLSET "../etc/symbols.txt"
+EXTENT -99.001 28.999 -97.999 30.001
+UNITS DD
+SHAPEPATH "./data"
+IMAGECOLOR 255 255 255
+FONTSET "../etc/fonts.txt"
+PROJECTION
+  "init=epsg:4326"
+END  
+
+WEB
+  IMAGEPATH "C:/EPIC_Ready/tmp/ms_tmp/" 
+  IMAGEURL "/ms_tmp/"
+  METADATA
+    "wms_title"   		"EPIC CDB WMS Server"
+    "wms_abstract"      	"This server was setup by Visual Awarness Technologies and Consulting Inc and powered by MapServer."      
+    "wms_onlineresource" 	"http://127.0.0.1/cgi-bin/mapserv.exe?map=C:/EPIC_Ready/apps/cdb-demo/cdb-Vectors.map"
+    "wms_service_onlineresource" "https://www.epicready.com/"    
+    "wms_contactperson"		"Glen Johnson" 
+    "wms_contactorganization"   "Visual Awarness Technology and Consulting Inc"
+    "wms_contactposition"	"Director of Engineering"
+    "wms_contactelectronicmailaddress" "info@vatcinc.com"
+    "wms_srs"   		"EPSG:4326 EPSG:3857 EPSG:4269"
+    "wms_feature_info_mime_type" "text/plain"
+    "wms_enable_request" 	"*"
+    "wfs_title"          "EPIC CDB WFS Server" ## REQUIRED
+    "wfs_onlineresource" "http://127.0.0.1/cgi-bin/mapserv.exe?map=C:/EPIC_Ready/apps/cdb-demo/cdb-Vectors.map" ## Recommended
+    "wfs_srs"            "EPSG:4326" ## Recommended
+    "wfs_abstract"       "This server was setup by Visual Awarness Technologies and Consulting Inc and powered by MapServer." ## Recommended
+    "wfs_keywordlist"    "CDB WFS"
+    "wfs_fees"			 "none"
+    "wfs_accessconstraints" "none"
+    "wfs_enable_request" "*"  # necessary
+    "wfs_service_onlineresource" "https://www.epicready.com/"    
+    "wfs_contactperson"		"Glen Johnson" 
+    "wfs_contactorganization"   "Visual Awarness Technology and Consulting Inc"
+    "wfs_contactposition"	"Director of Engineering"
+    "wfs_contactelectronicmailaddress" "info@vatcinc.com"
+    "wfs_contactvoicetelephone" "321-696-3122"
+    "wfs_contactfacsimiletelephone" "none"
+    "wfs_address" "3611 Swann Ave"
+    "wfs_city" "Tampa"
+    "wfs_stateorprovince" "Florida"
+    "wfs_postcode" "33609"
+    "wfs_country" "United States"
+    "wfs_hoursofservice" "all"
+    "wfs_contactinstructions" "email"
+    "wfs_role" "service"
+  END
+END
+
+/* Imagery */
+LAYER
+  NAME "imagery"
+  METADATA
+    "wms_title" "Imagery"
+    "wms_include_items" "all"
+  END
+  TYPE RASTER
+  STATUS ON
+  TILEINDEX "ImageMapData"
+  TILEITEM "Location"
+  TEMPLATE "ttt.html"
+END # layer
+
+LAYER
+  NAME "GSFeature_S001_T001_Pnt_L00"
+  METADATA
+    "wms_title" "GSFeature_S001_T001_Pnt_L00"
+    "wms_include_items" "all"
+    "wfs_title"         "GSFeature_S001_T001_Pnt_L00" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "100_GSFeature_S001_T001_Pnt_L00"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSFeature_S001_T001_Pnt_L01"
+  METADATA
+    "wms_title" "GSFeature_S001_T001_Pnt_L01"
+    "wms_include_items" "all"
+    "wfs_title"         "GSFeature_S001_T001_Pnt_L01" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "100_GSFeature_S001_T001_Pnt_L01"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSFeature_S001_T001_Pnt_L02"
+  METADATA
+    "wms_title" "GSFeature_S001_T001_Pnt_L02"
+    "wms_include_items" "all"
+    "wfs_title"         "GSFeature_S001_T001_Pnt_L02" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "100_GSFeature_S001_T001_Pnt_L02"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSFeature_S001_T001_Pnt_L03"
+  METADATA
+    "wms_title" "GSFeature_S001_T001_Pnt_L03"
+    "wms_include_items" "all"
+    "wfs_title"         "GSFeature_S001_T001_Pnt_L03" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "100_GSFeature_S001_T001_Pnt_L03"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSFeature_S001_T001_Pnt_L04"
+  METADATA
+    "wms_title" "GSFeature_S001_T001_Pnt_L04"
+    "wms_include_items" "all"
+    "wfs_title"         "GSFeature_S001_T001_Pnt_L04" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "100_GSFeature_S001_T001_Pnt_L04"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSFeature_S001_T001_Pnt_L05"
+  METADATA
+    "wms_title" "GSFeature_S001_T001_Pnt_L05"
+    "wms_include_items" "all"
+    "wfs_title"         "GSFeature_S001_T001_Pnt_L05" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"    "ows_geomtype" "POINT25D"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "100_GSFeature_S001_T001_Pnt_L05"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSFeature_S001_T001_Pnt_L06"
+  METADATA
+    "wms_title" "GSFeature_S001_T001_Pnt_L06"
+    "wms_include_items" "all"
+    "wfs_title"         "GSFeature_S001_T001_Pnt_L06" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "100_GSFeature_S001_T001_Pnt_L06"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+
+LAYER
+  NAME "GTFeature_S001_T001_Pnt_L00"
+  METADATA
+    "wms_title" "GTFeature_S001_T001_Pnt_L00"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S001_T001_Pnt_L00" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S001_T001_Pnt_L00"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTFeature_S001_T001_Pnt_L01"
+  METADATA
+    "wms_title" "GTFeature_S001_T001_Pnt_L01"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S001_T001_Pnt_L01" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S001_T001_Pnt_L01"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTFeature_S001_T001_Pnt_L02"
+  METADATA
+    "wms_title" "GTFeature_S001_T001_Pnt_L02"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S001_T001_Pnt_L02" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S001_T001_Pnt_L02"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTFeature_S001_T001_Pnt_L03"
+  METADATA
+    "wms_title" "GTFeature_S001_T001_Pnt_L03"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S001_T001_Pnt_L03" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S001_T001_Pnt_L03"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTFeature_S001_T001_Pnt_L04"
+  METADATA
+    "wms_title" "GTFeature_S001_T001_Pnt_L04"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S001_T001_Pnt_L04" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+     "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S001_T001_Pnt_L04"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTFeature_S001_T001_Pnt_L05"
+  METADATA
+    "wms_title" "GTFeature_S001_T001_Pnt_L05"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S001_T001_Pnt_L05" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S001_T001_Pnt_L05"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTFeature_S001_T001_Pnt_L06"
+  METADATA
+    "wms_title" "GTFeature_S001_T001_Pnt_L06"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S001_T001_Pnt_L06" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S001_T001_Pnt_L06"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTFeature_S001_T001_Pnt_L07"
+  METADATA
+    "wms_title" "GTFeature_S001_T001_Pnt_L07"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S001_T001_Pnt_L07" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S001_T001_Pnt_L07"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTFeature_S002_T001_Pnt_L00"
+  METADATA
+    "wms_title" "GTFeature_S002_T001_Pnt_L00"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S002_T001_Pnt_L00" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S002_T001_Pnt_L00"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTFeature_S002_T001_Pnt_L01"
+  METADATA
+    "wms_title" "GTFeature_S002_T001_Pnt_L01"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S002_T001_Pnt_L01" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S002_T001_Pnt_L01"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTFeature_S002_T001_Pnt_L02"
+  METADATA
+    "wms_title" "GTFeature_S002_T001_Pnt_L02"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S002_T001_Pnt_L02" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S002_T001_Pnt_L02"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTFeature_S002_T001_Pnt_L03"
+  METADATA
+    "wms_title" "GTFeature_S002_T001_Pnt_L03"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S002_T001_Pnt_L03" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S002_T001_Pnt_L03"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTFeature_S002_T001_Pnt_L04"
+  METADATA
+    "wms_title" "GTFeature_S002_T001_Pnt_L04"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S002_T001_Pnt_L04" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S002_T001_Pnt_L04"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTFeature_S002_T001_Pnt_L05"
+  METADATA
+    "wms_title" "GTFeature_S002_T001_Pnt_L05"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S002_T001_Pnt_L05" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S002_T001_Pnt_L05"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTFeature_S002_T001_Pnt_L06"
+  METADATA
+    "wms_title" "GTFeature_S002_T001_Pnt_L06"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S002_T001_Pnt_L06" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S002_T001_Pnt_L06"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTFeature_S002_T001_Pnt_L07"
+  METADATA
+    "wms_title" "GTFeature_S002_T001_Pnt_L07"
+    "wms_include_items" "all"
+    "wfs_title"         "GTFeature_S002_T001_Pnt_L07" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "POINT25D"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "101_GTFeature_S002_T001_Pnt_L07"
+  UTFITEM "fid"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "CNAM"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelGeometry_S001_T001_Mda_L00"
+  METADATA
+    "wms_title" "GSModelGeometry_S001_T001_Mda_L00"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelGeometry_S001_T001_Mda_L00" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "300_GSModelGeometry_S001_T001_Mda_L00"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelGeometry_S001_T001_Mda_L01"
+  METADATA
+    "wms_title" "GSModelGeometry_S001_T001_Mda_L01"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelGeometry_S001_T001_Mda_L01" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+     "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "300_GSModelGeometry_S001_T001_Mda_L01"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelGeometry_S001_T001_Mda_L02"
+  METADATA
+    "wms_title" "GSModelGeometry_S001_T001_Mda_L02"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelGeometry_S001_T001_Mda_L02" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "300_GSModelGeometry_S001_T001_Mda_L02"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "CNAM"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelGeometry_S001_T001_Mda_L03"
+  METADATA
+    "wms_title" "GSModelGeometry_S001_T001_Mda_L03"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelGeometry_S001_T001_Mda_L03" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "300_GSModelGeometry_S001_T001_Mda_L03"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelGeometry_S001_T001_Mda_L04"
+  METADATA
+    "wms_title" "GSModelGeometry_S001_T001_Mda_L04"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelGeometry_S001_T001_Mda_L04" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "300_GSModelGeometry_S001_T001_Mda_L04"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelGeometry_S001_T001_Mda_L05"
+  METADATA
+    "wms_title" "GSModelGeometry_S001_T001_Mda_L05"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelGeometry_S001_T001_Mda_L05" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "300_GSModelGeometry_S001_T001_Mda_L05"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelGeometry_S001_T001_Mda_L06"
+  METADATA
+    "wms_title" "GSModelGeometry_S001_T001_Mda_L06"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelGeometry_S001_T001_Mda_L06" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "300_GSModelGeometry_S001_T001_Mda_L06"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelTexture_S001_T001_Mda_L00"
+  METADATA
+    "wms_title" "GSModelTexture_S001_T001_Mda_L00"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelTexture_S001_T001_Mda_L00" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "301_GSModelTexture_S001_T001_Mda_L00"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelTexture_S001_T001_Mda_L01"
+  METADATA
+    "wms_title" "GSModelTexture_S001_T001_Mda_L01"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelTexture_S001_T001_Mda_L01" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "301_GSModelTexture_S001_T001_Mda_L01"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelTexture_S001_T001_Mda_L02"
+  METADATA
+    "wms_title" "GSModelTexture_S001_T001_Mda_L02"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelTexture_S001_T001_Mda_L02" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "301_GSModelTexture_S001_T001_Mda_L02"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelTexture_S001_T001_Mda_L03"
+  METADATA
+    "wms_title" "GSModelTexture_S001_T001_Mda_L03"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelTexture_S001_T001_Mda_L03" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "301_GSModelTexture_S001_T001_Mda_L03"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelTexture_S001_T001_Mda_L04"
+  METADATA
+    "wms_title" "GSModelTexture_S001_T001_Mda_L04"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelTexture_S001_T001_Mda_L04" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "301_GSModelTexture_S001_T001_Mda_L04"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelTexture_S001_T001_Mda_L05"
+  METADATA
+    "wms_title" "GSModelTexture_S001_T001_Mda_L05"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelTexture_S001_T001_Mda_L05" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "301_GSModelTexture_S001_T001_Mda_L05"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelTexture_S001_T001_Mda_L06"
+  METADATA
+    "wms_title" "GSModelTexture_S001_T001_Mda_L06"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelTexture_S001_T001_Mda_L06" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "301_GSModelTexture_S001_T001_Mda_L06"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelDescriptor_S001_T001_Mda_L00"
+  METADATA
+    "wms_title" "GSModelDescriptor_S001_T001_Mda_L00"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelDescriptor_S001_T001_Mda_L00" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "303_GSModelDescriptor_S001_T001_Mda_L00"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelDescriptor_S001_T001_Mda_L01"
+  METADATA
+    "wms_title" "GSModelDescriptor_S001_T001_Mda_L01"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelDescriptor_S001_T001_Mda_L01" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "303_GSModelDescriptor_S001_T001_Mda_L01"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelDescriptor_S001_T001_Mda_L02"
+  METADATA
+    "wms_title" "GSModelDescriptor_S001_T001_Mda_L02"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelDescriptor_S001_T001_Mda_L02" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "303_GSModelDescriptor_S001_T001_Mda_L02"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelDescriptor_S001_T001_Mda_L03"
+  METADATA
+    "wms_title" "GSModelDescriptor_S001_T001_Mda_L03"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelDescriptor_S001_T001_Mda_L03" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "303_GSModelDescriptor_S001_T001_Mda_L03"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelDescriptor_S001_T001_Mda_L04"
+  METADATA
+    "wms_title" "GSModelDescriptor_S001_T001_Mda_L04"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelDescriptor_S001_T001_Mda_L04" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "303_GSModelDescriptor_S001_T001_Mda_L04"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelDescriptor_S001_T001_Mda_L05"
+  METADATA
+    "wms_title" "GSModelDescriptor_S001_T001_Mda_L05"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelDescriptor_S001_T001_Mda_L05" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "303_GSModelDescriptor_S001_T001_Mda_L05"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GSModelDescriptor_S001_T001_Mda_L06"
+  METADATA
+    "wms_title" "GSModelDescriptor_S001_T001_Mda_L06"
+    "wms_include_items" "all"
+    "wfs_title"         "GSModelDescriptor_S001_T001_Mda_L06" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "303_GSModelDescriptor_S001_T001_Mda_L06"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTModelGeometry_Mda"
+  METADATA
+    "wms_title" "GTModelGeometry_Mda"
+    "wms_include_items" "all"
+    "wfs_title"         "GTModelGeometry_Mda" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "GTModelGeometry_Mda"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+LAYER
+  NAME "GTModelTexture_Mda"
+  METADATA
+    "wms_title" "GTModelTexture_Mda"
+    "wms_include_items" "all"
+    "wfs_title"         "GTModelTexture_Mda" ##REQUIRED
+    "wfs_srs"           "EPSG:4326" ## REQUIRED
+    "gml_include_items" "all" ## Optional (serves all attributes for layer)
+    "gml_featureid"     "fid" ## REQUIRED
+    "wfs_enable_request" "*"
+    "ows_geomtype" "None"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  TILEINDEX "VectorMapData_0.shp"
+  TILEITEM "Location"
+  DATA "GTModelTexture_Mda"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "content_type"
+  CLASS
+    NAME "content_type"
+    SYMBOL "square"
+    SIZE 4
+    COLOR 150 150 150
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+    END
+    MAXSCALEDENOM 50000000
+  END
+  TEMPLATE "ttt.html"  
+END # layer
+
+END # Map File
